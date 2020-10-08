@@ -5,11 +5,17 @@ import re,pymysql
 
 
 
+
 root = Tk()
-root.title("Registration Form")
+root.title("Welcome!!")
 root.geometry("1350x700+0+0")
 root.iconbitmap("C:\\Users\\apoor\\Desktop\\Tkinter\\logo.ico")
 
+
+
+def loginWindow():
+         root.destroy()
+         import loginWindow
 
 
 def registerData():
@@ -79,7 +85,19 @@ def clearFields():
 
 # Frame
 frame = Frame(root, bg="white")
-frame.place(x=80,y=100,width=1000, height=800)
+frame.place(x=420,y=30,width=920, height=580)
+
+
+frame1 = Frame(root, bg="grey")
+frame1.place(x=0,y=0, width=415, height=800)
+
+# Login Area
+LImage = ImageTk.PhotoImage(file="C:\\Users\\apoor\\Desktop\\Tkinter\\logo1.jpg")
+LLabel = Label(root, image=LImage).place(x=10,y=30)
+
+login_image = ImageTk.PhotoImage(file="C:\\Users\\apoor\\Desktop\\Tkinter\\loginBtn.png")
+btn1 = Button(frame1, image=login_image,bd=0,cursor="hand2", command=loginWindow).place(x=100,y=300)
+
 
 title = Label(frame, text="REGISTER HERE",font=("times new roman",16,"bold"), bg="white", fg="green").place(x=50,y=30)
 
@@ -114,8 +132,6 @@ btn = Button(frame, image=tn_image,bd=0,cursor="hand2", command=registerData).pl
 
 
 
-
-    
 
 
 root.mainloop()
