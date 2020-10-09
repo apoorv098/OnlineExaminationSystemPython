@@ -16,6 +16,12 @@ def registerWindow():
 
 
 def getData():
+    global Email_pass
+    global pass_pass
+    Email_pass = Email.get()
+    pass_pass = password.get()
+
+    
     if(Email.get() == "" or password.get() == ""):
         messagebox.showerror("Error","Fields cannot be empty", parent=root)
     else:
